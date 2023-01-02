@@ -33,8 +33,7 @@ int main()
     // has(string, vector<string>)
     bulletin("Check has(string, vector<string>)", has("Apple", vec_s));
 
-    // colored(string, Color, Style)
-    cout << colored("Hello world!", Blue, Underline) << endl;
+    
 
     return 0;
 }

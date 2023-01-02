@@ -20,14 +20,14 @@ std::vector<std::string> from(std::string s, char delimiter){
         if(s[i] != delimiter){
             len++;
         }else{
-            buffer.push_back(s.substr(pos, len + 1));
+            buffer.push_back(s.substr(pos + 1, len));
             len = 0;
             pos = i;
         }
     }
 
     if(s[s.length()] != delimiter){
-        buffer.push_back(s.substr(pos, len + 1));
+        buffer.push_back(s.substr(pos + 1, len));
     }
     return buffer;
 }
