@@ -12,14 +12,14 @@ class HelpMaker {
 public:
 	HelpMaker(std::string name);
 	void add_usage(std::string usage);
-	void add_argument(std::string argument, std::string description, std::string alternative);
+    void add_argument(std::string argument, std::string description, std::string alternative = "");
 	void add_example(std::string example);
 	void print();
 private:
 	std::string name, usage;
 	std::vector<Entry> entries;
 	std::vector<std::string> examples;
-	bool has_entry, has_usage, has_example;
+    bool has_entry = false, has_usage = false, has_example = false;
 };
 
 HelpMaker::HelpMaker(std::string name){
@@ -32,7 +32,7 @@ void HelpMaker::add_usage(std::string usage){
 }
 
 
-void HelpMaker::add_argument(std::string argument, std::string description, std::string alternative = ""){
+void HelpMaker::add_argument(std::string argument, std::string description, std::string alternative){
 	has_entry = true;
 	Entry entry;
 	entry.argument = argument;
